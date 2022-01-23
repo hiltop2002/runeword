@@ -69,7 +69,7 @@
             <appender-ref ref="ROLLINGFILE"/>
         </logger>
 
-		<logger name="org.springframework" level="ERROR">
+		<logger name="org.springframework" level="INFO">
             <appender-ref ref="STDOUT"/>
         </logger>
         
