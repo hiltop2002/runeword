@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOG_HOME" value="c:\logs\runeword" />
+    
+    <property name="AUDIT_HOME" value="c:\logs\runeword\audit" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%-5level] {%thread} - [%logger]- %msg%n</pattern>
+        </encoder>
+    </appender>
+	
+	<!--this should only be used in request and response -->
+    <appender name="REQUESTRESPONSELOGGIN" class="ch.qos.logback.core.FileAppender">
+        <file>C:\logs\runeword\requestresponse.log</file>
+        <encoder>
+            <pattern>%date %-5level [%thread] - [%logger] - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <!--this should only be used in system audit -->
+    <appender name="systemaudit" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>C:\logs\runword\audit\systemaudit.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover
+			Once any of the below condition met, it will change the file name -->
+			<fileNamePattern>${AUDIT_HOME}/systemaudit.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- or whenever the file size reaches 10MB -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+        <encoder>
+            <pattern>%date %-5level - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+	<appender name="ROLLINGFILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>c:\logs\runeword\main.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- daily rollover
+			Once any of the below condition met, it will change the file name -->
+			<fileNamePattern>${LOG_HOME}/SLPAMM.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<!-- or whenever the file size reaches 10MB -->
+			<timeBasedFileNamingAndTriggeringPolicy
+				class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>10MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+
+		<encoder>
+			<pattern>%date [%-5level] {%thread} - [%logger]- %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+    <springProfile name="local">
+        <logger name="com.fun.ben" level="info">
+            <appender-ref ref="STDOUT"/>
+        </logger>
+        
+        <logger name="com.fun.ben.services" level="info">
+            <appender-ref ref="systemaudit"/>
+        </logger>
+        
+        <logger name="com.fun.ben" level="INFO">
+            <appender-ref ref="ROLLINGFILE"/>
+        </logger>
+
+		<logger name="org.springframework" level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </logger>
+        
+         <logger name="org.hibernate" level="ERROR">
+         	<appender-ref ref="ROLLINGFILE"/>
+        </logger>
+    </springProfile>
+
+</configuration>

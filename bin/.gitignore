@@ -27,5 +27,3 @@ mvnw.cmd
 /target/
 .mvn/wrapper/maven-wrapper.properties
 .vscode/settings.json
-.settings/org.eclipse.core.resources.prefs
-*.prefs
