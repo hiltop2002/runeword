@@ -14,9 +14,10 @@ public class Io {
         io.setEffect_helmet("+10 Vitality");
         io.setEffect_shield("+10 Vitality");
         io.setEffect_weapon("+10 Vitality");
-        io.setId(15);
+        io.setId(16);
         io.setImg("io.gif");
         io.setLevel(35);
+        io.setName("Io");
         io.setNext(Lum.getRune());
         io.setPrevious(Hel.getRune());
     }

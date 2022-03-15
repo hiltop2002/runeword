@@ -14,16 +14,17 @@ public class Eth {
         eth.setEffect_helmet("Regenerate Mana 15%");
         eth.setEffect_shield("Regenerate Mana 15%");
         eth.setEffect_weapon("Regenerate Mana 15%");
-        eth.setId(2);
+        eth.setId(5);
         eth.setImg("eth.gif");
         eth.setLevel(15);
+        eth.setName("Eth");
         eth.setNext(Ith.getRune());
         eth.setPrevious(Nef.getRune());
     }
 
     static public Rune getRune()
     {
-        return Eld.eld;
+        return eth;
     }
 
 }

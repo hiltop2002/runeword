@@ -14,9 +14,10 @@ public class Um {
         um.setEffect_helmet("+15% Resist All");
         um.setEffect_shield("+22% Resist All");
         um.setEffect_weapon("25% Chance of Open Wounds");
-        um.setId(15);
+        um.setId(22);
         um.setImg("um.gif");
         um.setLevel(49);
+        um.setName("Um");
         um.setNext(Mal.getRune());
         um.setPrevious(Pul.getRune());
     }

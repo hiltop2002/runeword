@@ -14,9 +14,10 @@ public class Lum {
         lum.setEffect_helmet("+10 Energy");
         lum.setEffect_shield("+10 Energys");
         lum.setEffect_weapon("+10 Energy");
-        lum.setId(15);
+        lum.setId(17);
         lum.setImg("lum.gif");
         lum.setLevel(37);
+        lum.setName("Lum");
         lum.setNext(Ko.getRune());
         lum.setPrevious(Hel.getRune());
     }

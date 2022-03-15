@@ -14,9 +14,10 @@ public class Tal {
         tal.setEffect_helmet("+35% Poison Resistance");
         tal.setEffect_shield("+35% Poison Resistance");
         tal.setEffect_weapon("75 Poison damage over 5 seconds");
-        tal.setId(2);
+        tal.setId(7);
         tal.setImg("tal.gif");
         tal.setLevel(17);
+        tal.setName("Tal");
         tal.setNext(Ral.getRune());
         tal.setPrevious(Ith.getRune());
     }

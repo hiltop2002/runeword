@@ -14,9 +14,10 @@ public class Pul {
         pul.setEffect_helmet("+30% Defense");
         pul.setEffect_shield("+30% Defense");
         pul.setEffect_weapon("+75% Damage to Demons, +100 AR against Demons");
-        pul.setId(15);
+        pul.setId(21);
         pul.setImg("pul.gif");
         pul.setLevel(45);
+        pul.setName("Pul");
         pul.setNext(Um.getRune());
         pul.setPrevious(Lem.getRune());
     }

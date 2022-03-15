@@ -14,9 +14,10 @@ public class Lem {
         lem.setEffect_helmet("+50% Extra Gold from Monsters");
         lem.setEffect_shield("+50% Extra Gold from Monsters");
         lem.setEffect_weapon("+75% Extra Gold from Monsters");
-        lem.setId(15);
+        lem.setId(20);
         lem.setImg("lem.gif");
         lem.setLevel(43);
+        lem.setName("lem");
         lem.setNext(Pul.getRune());
         lem.setPrevious(Fal.getRune());
     }

@@ -15,16 +15,17 @@ public class Nef {
         nef.setEffect_helmet("+30 Defense vs. Missile");
         nef.setEffect_shield("+30 Defense vs. Missile");
         nef.setEffect_weapon("Knockback");
-        nef.setId(2);
+        nef.setId(4);
         nef.setImg("nef.gif");
         nef.setLevel(13);
+        nef.setName("Nef");
         nef.setNext(Eth.getRune());
         nef.setPrevious(Tir.getRune());
     }
 
     static public Rune getRune()
     {
-        return Eld.eld;
+        return nef;
     }
 
 }

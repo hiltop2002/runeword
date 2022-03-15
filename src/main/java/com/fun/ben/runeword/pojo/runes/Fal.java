@@ -14,9 +14,10 @@ public class Fal {
         fal.setEffect_helmet("+10 Strength");
         fal.setEffect_shield("+10 Strength");
         fal.setEffect_weapon("+10 Strength");
-        fal.setId(15);
+        fal.setId(19);
         fal.setImg("fal.gif");
         fal.setLevel(41);
+        fal.setName("Fal");
         fal.setNext(Lem.getRune());
         fal.setPrevious(Ko.getRune());
     }

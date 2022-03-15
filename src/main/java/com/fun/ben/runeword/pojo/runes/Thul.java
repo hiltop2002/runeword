@@ -14,9 +14,10 @@ public class Thul {
         thul.setEffect_helmet("+35% Cold Resistance");
         thul.setEffect_shield("+35% Cold Resistance");
         thul.setEffect_weapon("+3-14 Cold Damage (Cold Length 3 seconds)");
-        thul.setId(2);
+        thul.setId(10);
         thul.setImg("thul.gif");
         thul.setLevel(23);
+        thul.setName("Thul");
         thul.setNext(Amn.getRune());
         thul.setPrevious(Thul.getRune());
     }

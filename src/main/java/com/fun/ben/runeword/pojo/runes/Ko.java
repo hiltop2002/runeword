@@ -14,9 +14,10 @@ public class Ko {
         ko.setEffect_helmet("+10 Dexterity");
         ko.setEffect_shield("+10 Dexterity");
         ko.setEffect_weapon("+10 Dexterity");
-        ko.setId(15);
+        ko.setId(18);
         ko.setImg("ko.gif");
         ko.setLevel(39);
+        ko.setName("Ko");
         ko.setNext(Fal.getRune());
         ko.setPrevious(Lum.getRune());
     }

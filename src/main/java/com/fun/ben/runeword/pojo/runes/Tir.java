@@ -14,16 +14,17 @@ public class Tir {
         tir.setEffect_helmet("+2 Mana Per Kill");
         tir.setEffect_shield("+2 Mana Per Kill");
         tir.setEffect_weapon("+2 Mana Per Kill");
-        tir.setId(2);
-        tir.setImg("eld.gif");
+        tir.setId(3);
+        tir.setImg("tir.gif");
         tir.setLevel(13);
+        tir.setName("Tir");
         tir.setNext(Nef.getRune());
         tir.setPrevious(Eld.getRune());
     }
 
     static public Rune getRune()
     {
-        return Eld.eld;
+        return Tir.tir;
     }
 
 }

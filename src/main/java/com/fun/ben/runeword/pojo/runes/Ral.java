@@ -14,9 +14,10 @@ public class Ral {
         ral.setEffect_helmet("+35% Fire Resistance");
         ral.setEffect_shield("+35% Fire Resistance");
         ral.setEffect_weapon("5-30 Fire Damage");
-        ral.setId(2);
+        ral.setId(8);
         ral.setImg("tal.gif");
         ral.setLevel(19);
+        ral.setName("Ral");
         ral.setNext(Ort.getRune());
         ral.setPrevious(Tal.getRune());
     }

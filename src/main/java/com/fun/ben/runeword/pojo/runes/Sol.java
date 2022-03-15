@@ -5,6 +5,7 @@ import com.fun.ben.runeword.pojo.Rune;
 public class Sol {
     
     private  static Rune sol = new Rune();
+    
     static{
         sol.setContainedRuneword(null);
         sol.setCubed_into_count(3);
@@ -14,9 +15,10 @@ public class Sol {
         sol.setEffect_helmet("-7 Damage Taken");
         sol.setEffect_shield("-7 Damage Taken");
         sol.setEffect_weapon("+9 to Minimum Damage");
-        sol.setId(2);
+        sol.setId(12);
         sol.setImg("sol.gif");
         sol.setLevel(27);
+        sol.setName("Sol");
         sol.setNext(Shael.getRune());
         sol.setPrevious(Amn.getRune());
     }

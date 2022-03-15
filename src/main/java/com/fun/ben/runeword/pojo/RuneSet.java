@@ -11,20 +11,6 @@ public class RuneSet {
     {
 
         //tir
-        Rune tir = new Rune();
-        
-
-        allRunesSet.add(eld);
-
-
-         
- 
-         allRunesSet.add(eld);
-
-
-       
-
-        allRunesSet.add(el);
 
     }
     

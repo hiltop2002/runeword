@@ -153,5 +153,20 @@ public class Rune {
     public void setCubed_into_count(int cubed_into_count) {
         this.cubed_into_count = cubed_into_count;
     }
+    
+    public String display()
+    {
+    	String o = "";
+    	
+    	o += this.name + " " + this.id + "\n";
+    	o += "Weapon: " + this.effect_weapon+ "\n";
+    	o += "Armor: " + this.effect_armor+ "\n";
+    	o += "Helm: " + this.effect_helmet+ "\n";
+    	o += "Shield: " + this.effect_shield+ "\n";
+    	o += "cLvl Required: " + this.level+ "\n";
+    	o += this.getDescription()+ "\n";
+    	o += "\n";
+     	return o;
+    }
 
 }

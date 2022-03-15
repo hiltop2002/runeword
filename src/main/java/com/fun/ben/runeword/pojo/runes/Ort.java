@@ -14,9 +14,10 @@ public class Ort {
         ort.setEffect_helmet("+35% Lightning Resistance");
         ort.setEffect_shield("+35% Lightning Resistance");
         ort.setEffect_weapon("+1-50 Lightning Damage");
-        ort.setId(2);
+        ort.setId(9);
         ort.setImg("ort.gif");
         ort.setLevel(21);
+        ort.setName("Ort");
         ort.setNext(Thul.getRune());
         ort.setPrevious(Ral.getRune());
     }

@@ -17,7 +17,8 @@ public class Hel {
         hel.setId(15);
         hel.setImg("hel.gif");
         hel.setLevel(0);
-        hel.setNext(Hel.getRune());
+        hel.setName("Hel");
+        hel.setNext(Io.getRune());
         hel.setPrevious(Dol.getRune());
     }
 

@@ -14,9 +14,10 @@ public class Shael {
         shael.setEffect_helmet("Faster Hit Recovery (+20)");
         shael.setEffect_shield("Faster Block Rate (+20)");
         shael.setEffect_weapon("Faster Attack Rate (+20)");
-        shael.setId(2);
+        shael.setId(13);
         shael.setImg("shael.gif");
         shael.setLevel(29);
+        shael.setName("Shael");
         shael.setNext(Dol.getRune());
         shael.setPrevious(Sol.getRune());
     }
