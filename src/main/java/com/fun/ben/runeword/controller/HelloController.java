@@ -1,5 +1,7 @@
 package com.fun.ben.runeword.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.server.mvc.WebMvcLinkBuilder;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -67,6 +71,46 @@ public class HelloController {
     	}
     	
     	return EntityModel.of(t);
+    }
+    
+    @GetMapping("/api/gettier/{tier}")
+    @ResponseBody
+    public ResponseEntity<Object> getTier(@PathVariable("tier") String tier)
+    {
+    	List<Rune> tierlist = rs.getRuneByTier(tier);
+    	
+    	if(!rs.isTierValid(tier))
+    	{
+    		return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+    	}
+    	
+    	for(Rune t: tierlist)
+    	{
+    		t.removeLinks(); //hey, this is useful
+        	
+        	if(t.getNext() != null)
+        	{
+        		Link nextlink = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(HelloController.class).getRune(t.getNext().getName())).withRel("next");
+        		t.add(nextlink);
+        	}
+        	
+        	if(t.getPrevious() != null)
+        	{
+        		Link previouslink = WebMvcLinkBuilder.linkTo(WebMvcLinkBuilder.methodOn(HelloController.class).getRune(t.getPrevious().getName())).withRel("previous");
+                
+                t.add(previouslink);
+        	}
+    	}
+    	
+    	if(tierlist.size() > 1)
+    	{
+    		return new ResponseEntity<>(tierlist, HttpStatus.OK);
+    	}
+    	else
+    	{
+    		return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    	}
+    	
     }
     
 }
