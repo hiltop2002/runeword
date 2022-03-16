@@ -19,7 +19,7 @@ public class Thul {
         thul.setLevel(23);
         thul.setName("Thul");
         thul.setNext(Amn.getRune());
-        thul.setPrevious(Thul.getRune());
+        thul.setPrevious(Ort.getRune());
     }
 
     static public Rune getRune()

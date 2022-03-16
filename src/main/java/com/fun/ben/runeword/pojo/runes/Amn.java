@@ -2,7 +2,7 @@ package com.fun.ben.runeword.pojo.runes;
 
 import com.fun.ben.runeword.pojo.Rune;
 
-public class Amn extends Rune{
+public class Amn{
 	
 	private static Rune amn = new Rune();
 	

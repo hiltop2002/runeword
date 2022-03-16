@@ -1,17 +1,29 @@
 package com.fun.ben.runeword.pojo;
 
-import java.util.HashSet;
+import org.springframework.stereotype.Component;
 
+import com.fun.ben.runeword.pojo.runes.El;
+import com.fun.ben.runeword.pojo.runes.Zod;
+
+@Component
 public class RuneSet {
 
-    //just a random java.util data strcuture
-    private static HashSet<Rune> allRunesSet = new HashSet<Rune>();
-
-    static
+    private static final Rune el = El.getRune();
+    private static final Rune zod = Zod.getRune();
+    
+    
+    private Rune walker;
+    
+    public Rune getRuneByName(String runename)
     {
-
-        //tir
-
+    	walker = el;
+    	
+    	while(!walker.getName().equalsIgnoreCase(runename))
+    	{
+    		walker = walker.getNext();
+    	} 
+    	
+    	return walker;
     }
     
 }

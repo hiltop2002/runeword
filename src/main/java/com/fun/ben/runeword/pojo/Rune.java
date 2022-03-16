@@ -1,6 +1,11 @@
 package com.fun.ben.runeword.pojo;
 
-public class Rune {
+import org.springframework.hateoas.RepresentationModel;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({"previous", "next"})
+public class Rune extends RepresentationModel<Rune>{
     
     int id;
     //name of rune
@@ -166,6 +171,21 @@ public class Rune {
     	o += "cLvl Required: " + this.level+ "\n";
     	o += this.getDescription()+ "\n";
     	o += "\n";
+     	return o;
+    }
+    
+    public String display_h()
+    {
+    	String o = "";
+    	
+    	o += this.name + " " + this.id + "<br/>";
+    	o += "Weapon: " + this.effect_weapon+ "<br/>";
+    	o += "Armor: " + this.effect_armor+ "<br/>";
+    	o += "Helm: " + this.effect_helmet+ "<br/>";
+    	o += "Shield: " + this.effect_shield+ "<br/>";
+    	o += "cLvl Required: " + this.level+ "<br/>";
+    	o += this.getDescription()+ "<br/>";
+    	o += "<br/>";
      	return o;
     }
 
