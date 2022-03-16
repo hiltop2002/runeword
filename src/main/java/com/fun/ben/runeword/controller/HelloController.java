@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.fun.ben.runeword.exception.RuneNotFoundException;
 import com.fun.ben.runeword.pojo.Rune;
 import com.fun.ben.runeword.pojo.RuneSet;
 
@@ -55,6 +56,10 @@ public class HelloController {
     public EntityModel<Rune> getRune(@PathVariable("rune") String rune)
     {
     	Rune t = rs.getRuneByName(rune);
+    	
+    	if(t == null)
+    		throw new RuneNotFoundException(rune);
+    	
     	t.removeLinks(); //hey, this is useful
     	
     	if(t.getNext() != null)

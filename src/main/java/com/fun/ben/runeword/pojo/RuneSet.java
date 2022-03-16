@@ -36,7 +36,7 @@ public class RuneSet {
     {
     	walker = el;
     	
-    	while(!walker.getName().equalsIgnoreCase(runename))
+    	while(walker!=null && !walker.getName().equalsIgnoreCase(runename))
     	{
     		walker = walker.getNext();
     	} 
