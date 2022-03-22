@@ -42,6 +42,17 @@ public class HelloController {
         mav.setViewName("index");
         return mav;
     }
+    
+    @GetMapping("/hello")
+    ModelAndView helloSecond(HttpServletRequest request, HttpServletResponse response)
+    {
+        String ip = request.getRemoteAddr();
+        ModelAndView mav = new ModelAndView();
+        w.info("ok");
+        mav.addObject("ip", ip);
+        mav.setViewName("index");
+        return mav;
+    }
 
     @GetMapping("/api/getrunetext/{rune}")
     @ResponseBody
